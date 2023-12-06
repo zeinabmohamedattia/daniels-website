@@ -1,0 +1,573 @@
+/* ---------------------------------------variables---------------------------------------------- */
+:root {
+    --first-main-color: #1c1c1c;
+    --second-main-color: #343434;
+    --third-main-color: #5B5B5B;
+    --text-color: #748182;
+    --trans-dur: 0.5s;
+    --bs-navbar-brand-hover-color: #1c1c1c;
+    --light-color: #f4f4f4;
+}
+
+/* ---------------------------------------global---------------------------------------------- */
+* {
+    color: var(--text-color);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-margin: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-logo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.icon-size-s {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+}
+
+.padding-lg {
+    padding-bottom: 70px;
+}
+
+.main-color-bg {
+    background-color: var(--first-main-color);
+}
+
+.main-color1 {
+    color: var(--first-main-color);
+}
+
+.main-color2 {
+    color: var(--second-main-color);
+}
+
+.btn {
+
+    border: 1px solid var(--first-main-color);
+    border-radius: 5px;
+    font-size: 13px;
+    transition: all var(--trans-dur);
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 900;
+    z-index: 4;
+}
+
+.section-title::after {
+    content: "";
+    background-image: url(../imgs/imgs/dots.png);
+    width: 100%;
+    height: 30px;
+    background-repeat: repeat;
+    z-index: -1;
+    bottom: -10px;
+    left: 0;
+    position: absolute;
+}
+
+/* ---------------------------------------nav---------------------------------------------- */
+nav {
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05)
+}
+
+nav .nav-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--first-main-color);
+
+}
+
+.navbar-nav .nav-link {
+    font-size: 14px;
+    color: var(--first-main-color);
+}
+
+.navbar-nav .nav-link:before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 15px;
+    background-color: var(--first-main-color);
+    transition: width var(--trans-dur);
+}
+
+.navbar-nav .nav-link.active:before,
+.navbar-nav .nav-link.active:focus::before {
+    width: 60%;
+}
+
+/* ---------------------------------------header---------------------------------------------- */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/imgs/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header h4 {
+    font-size: 50px;
+    font-weight: 800;
+
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+header h1::after {
+    content: " |";
+    animation: type infinite alternate 2s;
+    font-weight: 400;
+}
+
+@media screen and (max-width:768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@keyframes type {
+    0% {
+        content: "  |";
+    }
+
+    10% {
+        content: "  d|";
+    }
+
+    20% {
+        content: "  de|";
+
+    }
+
+    30% {
+        content: "  dev|";
+    }
+
+    40% {
+        content: "  deve|";
+
+    }
+
+    50% {
+        content: "  devel|";
+
+    }
+
+    60% {
+        content: "  develo|";
+
+    }
+
+    70% {
+        content: "  develop|";
+
+    }
+
+    80% {
+        content: "  develope|";
+
+    }
+
+    90% {
+
+        content: "  developer|";
+    }
+
+    100% {
+
+        content: "  developer |";
+
+    }
+}
+
+/* ---------------------------------------about---------------------------------------------- */
+#about .about-img:before {
+    content: " ";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 0px;
+    bottom: -30px;
+    background-image: url(../imgs/imgs/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+#about h3 {
+    color: var(--second-main-color);
+    font-weight: 800;
+    font-size: 30px;
+}
+
+#about .subtitle {
+    color: #999;
+}
+
+.progress {
+    background-color: #f7f7f7;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+}
+
+.progress-bar {
+    border-radius: 5px;
+
+}
+
+.progress-bar h6 {
+    font-size: 13px;
+}
+
+.progress-bar span {
+    font-size: 11px;
+}
+
+#about .btn1 {
+    color: var(--light-color);
+}
+
+#about .btn1:hover,
+#contact form .form-btn:hover {
+    background-color: white;
+    border-color: var(--first-main-color);
+    color: var(--first-main-color);
+}
+
+#about .btn2:hover {
+    background-color: var(--first-main-color);
+    color: var(--light-color);
+}
+
+/* ---------------------------------------services---------------------------------------------- */
+#services .card {
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+}
+
+#services .card-text:last-child {
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#services .card-title {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+#services .icon {
+    height: 70px;
+    width: 70px;
+    transition: all var(--trans-dur);
+    background-color: var(--light-color);
+}
+
+#services i {
+    transition: color var(--trans-dur);
+    font-size: 30px;
+}
+
+#services .card:hover .icon,
+#contact .card:hover .icon {
+    background-color: var(--second-main-color);
+}
+
+#services .card:hover i,
+#contact .card:hover i {
+    color: #eee;
+}
+
+/* ---------------------------------------works---------------------------------------------- */
+.nav-pills .nav-link {
+    font-weight: 700;
+    color: var(--second-main-color);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+    background-color: #ffffff;
+    color: var(--second-main-color);
+}
+
+.nav-pills .nav-link:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: var(--first-main-color);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: all var(--trans-dur);
+}
+
+.nav-pills .nav-link.active:before,
+.nav-pills .nav-link.active:focus::before {
+    width: 100%;
+}
+
+
+.work_item .work_item_layer {
+
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    z-index: 2;
+    transform: translateY(10px);
+    transition: all var(--trans-dur);
+}
+
+.work_item:hover .work_item_layer {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.work_item:hover h5 {
+    transform: translateY(0px);
+}
+
+.work_item h5 {
+    font-size: 12px;
+    transform: translateY(-15px);
+    transition: all var(--trans-dur);
+    font-weight: 700;
+}
+
+.work_item:hover .icon {
+    transform: translateY(0px);
+}
+
+.work_item .icon {
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid var(--first-main-color);
+    transform: translateY(15px);
+    transition: all var(--trans-dur);
+    cursor: pointer;
+}
+
+.work_item .icon i {
+    color: var(--light-color);
+    font-size: 14px;
+}
+
+.work_item .icon:hover i {
+    color: var(--first-main-color);
+
+}
+
+.work_item .icon:hover {
+    background-color: white;
+}
+
+/* ---------------------------------------testimonial---------------------------------------------- */
+
+#clients .testi-img {
+    width: 90px;
+    height: 90px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    background-color: #869791;
+}
+
+.carousel-indicators {
+    transform: translatey(110%);
+}
+
+.carousel-item p {
+    font-size: 15px;
+}
+
+.carousel-item h6 {
+
+    font-weight: 600;
+}
+
+.carousel-item span {
+    font-size: 12px;
+    color: #999;
+    font-weight: 700;
+
+}
+
+/* ---------------------------------------facts---------------------------------------------- */
+#facts h4 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#facts p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------team---------------------------------------------- */
+#team .card {
+    background-color: var(--third-main-color);
+    border-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#team .card .card-body h4 {
+    font-weight: 500;
+    font-size: 26px;
+}
+
+#team .card .card-body h5 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#team .card .card-img {
+
+    border-radius: 0;
+}
+
+#team .card .card-img .layer {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: all var(--trans-dur);
+    transform: rotateY(180deg) scale(0.5, 0.5);
+
+}
+
+#team .card .card-img img {
+    transition: all var(--trans-dur);
+
+}
+
+#team .card .card-img:hover img {
+    transform: scale(1.2);
+}
+
+#team .card .card-img:hover .layer,
+#team .card:hover .layer {
+    transform: rotateY(0) scale(1, 1);
+    opacity: 1;
+
+}
+
+#team .card .card-img .layer .icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--first-main-color);
+    border: 1px solid var(--first-main-color);
+    transition: all var(--trans-dur);
+}
+
+#team .card .card-img .layer .icon:hover {
+
+    background-color: white;
+}
+
+#team .card .card-img .layer .icon i {
+    font-size: 20px;
+    color: var(--light-color);
+    transition: all var(--trans-dur);
+
+}
+
+#team .card .card-img .layer .icon:hover i {
+    color: var(--first-main-color);
+}
+
+
+/* ---------------------------------------contact---------------------------------------------- */
+#contact .card-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#contact .card-text:last-child {
+    font-size: 15px;
+}
+
+#contact .card {
+    --bs-card-spacer-x: 0;
+}
+
+#contact .icon {
+    height: 60px;
+    width: 60px;
+    transition: all var(--trans-dur);
+    background-color: var(--light-color);
+}
+
+#contact i {
+    transition: color var(--trans-dur);
+    font-size: 25px;
+}
+
+input, textarea {
+    font-size: 14px;
+    border-radius: 5px;
+    background: var(--light-color);
+    border: 0;
+    padding: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+    outline: none;
+}
+
+#contact form .form-btn {
+    font-size: 14px;
+    color: var(--light-color);
+    padding-inline: 40px;
+}
+
+/* ---------------------------------------form---------------------------------------------- */
+footer p {
+    font-size: 13px;
+}
